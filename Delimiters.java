@@ -17,10 +17,17 @@ public class Delimiters
         {
             if (s.equals(openDel) || s.equals(closeDel)) delimiters.add(s);
         }
-        return delimiters.
+        return delimiters;
     }
     public boolean isBalance(ArrayList<String> delimiters)
     {
-
+        int opens = 0;
+        int closes = 0;
+        for (String s : delimiters)
+        {
+            if (s.equals(openDel)) opens++;
+            if (s.equals(closeDel)) closes++;
+        }
+        return (opens == closes);
     }
 }
